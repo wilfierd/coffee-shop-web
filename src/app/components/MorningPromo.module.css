@@ -1,0 +1,66 @@
+.section {
+    position: relative;
+    height: 400px;
+    background-image: url('/images/brewviet_morning_promo_1765380431924.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: var(--color-white);
+    max-width: 600px;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.text {
+    font-family: var(--font-body);
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    font-size: 14px;
+    transition: transform 0.2s;
+    text-decoration: none;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    background-color: #E8C478;
+}
+
+@media (max-width: 768px) {
+    .section {
+        justify-content: center;
+        text-align: center;
+    }
+}

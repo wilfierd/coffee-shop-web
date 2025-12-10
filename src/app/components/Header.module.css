@@ -1,0 +1,83 @@
+.header {
+    height: 90px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-white);
+    letter-spacing: 1px;
+}
+
+.nav {
+    display: flex;
+    gap: 50px;
+}
+
+.navLink {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 15px;
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: opacity 0.3s ease;
+    opacity: 0.8;
+}
+
+.navLink:hover {
+    opacity: 1;
+    color: var(--color-accent);
+}
+
+.actions {
+    display: flex;
+    gap: 20px;
+}
+
+.authBtn,
+.cartBtn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    color: var(--color-white);
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.authBtn:hover,
+.cartBtn:hover {
+    background: var(--color-white);
+    color: var(--color-primary);
+    border-color: var(--color-white);
+}
+
+.cartBtn {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-primary);
+    font-weight: 700;
+}
