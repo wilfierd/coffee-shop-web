@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Features />
       <Recover />
       <MorningPromo />
-      <Features />
       <Collection />
     </>
   );
