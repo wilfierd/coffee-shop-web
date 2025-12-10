@@ -9,9 +9,9 @@ export default function Header() {
                     <Link href="/">BrewViet</Link>
                 </div>
                 <nav className={styles.nav}>
-                    <Link href="/" className={styles.navLink}>Home</Link>
+                    <Link href="/" className={`${styles.navLink} ${styles.navLinkActive}`}>Home</Link>
                     <Link href="#about" className={styles.navLink}>About</Link>
-                    <Link href="#menu" className={styles.navLink}>Menu</Link>
+                    <Link href="#shop" className={styles.navLink}>Menu</Link>
                     <Link href="#contact" className={styles.navLink}>Contact</Link>
                 </nav>
                 <div className={styles.actions}>
