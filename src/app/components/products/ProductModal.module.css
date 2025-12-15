@@ -1,0 +1,301 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    background: white;
+    width: 95%;
+    /* Slightly wider */
+    max-width: 1100px;
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    border-radius: 4px;
+    /* Less rounded */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.modal::-webkit-scrollbar {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .modal {
+        flex-direction: row;
+        padding: 3rem 4rem;
+        /* More breathing room */
+        overflow: hidden;
+    }
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    color: #888;
+    transition: color 0.2s;
+}
+
+.closeButton:hover {
+    color: #000;
+}
+
+/* Left Column */
+.imageSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Top align */
+    padding-right: 2rem;
+    position: relative;
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    /* Slightly larger max width */
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.zoomResult {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    background-repeat: no-repeat;
+    z-index: 5;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.imageSection:hover .zoomResult {
+    opacity: 1;
+}
+
+/* Right Column */
+.infoSection {
+    flex: 1.2;
+    /* Give info slightly more space */
+    padding-left: 2rem;
+    overflow-y: auto;
+    max-height: 80vh;
+    color: #333;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.infoSection::-webkit-scrollbar {
+    display: none;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #111;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    color: #333;
+}
+
+/* List Spec Style */
+.specList p {
+    margin: 0.4rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #000;
+}
+
+.specList strong {
+    font-weight: 700;
+    color: #000;
+    margin-right: 5px;
+}
+
+/* Mini Table */
+.miniTable {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    border: 1px solid #e0e0e0;
+}
+
+.miniTable td {
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+
+.miniTable td:first-child {
+    font-weight: 700;
+    /* Key column bold */
+    width: 140px;
+    background-color: #fcfcfc;
+}
+
+/* Price Row */
+.priceRow {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.priceLabel {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-right: 1.5rem;
+    color: #000;
+}
+
+.priceValue {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #8B5E3C;
+    /* Gold/Brown tone from image */
+    font-weight: 700;
+}
+
+/* Quantity Row */
+.quantityRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.quantityLabel {
+    font-size: 1rem;
+    margin-right: 1.5rem;
+    font-weight: 500;
+}
+
+.quantityControl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantityControl button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f0c14b;
+    /* Yellow/Orange from image */
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 0;
+    padding-bottom: 3px;
+}
+
+.quantityControl button:hover {
+    background-color: #e0b03a;
+}
+
+.quantityControl span {
+    font-size: 1.1rem;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.addToCartBtn {
+    padding: 0.8rem 2rem;
+    background: white;
+    border: 1px solid #dadada;
+    color: #000;
+    border-radius: 30px;
+    /* Pill */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.buyNowBtn {
+    padding: 0.8rem 2.5rem;
+    background: #000;
+    border: 1px solid #000;
+    color: white;
+    border-radius: 30px;
+    /* Pill */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.addToCartBtn:hover {
+    border-color: #000;
+}
+
+.buyNowBtn:hover {
+    background-color: #333;
+    border-color: #333;
+}
