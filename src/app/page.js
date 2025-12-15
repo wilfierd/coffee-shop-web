@@ -1,17 +1,24 @@
-import Hero from "./components/Hero";
-import Recover from "./components/Recover";
-import MorningPromo from "./components/MorningPromo";
-import Features from "./components/Features";
-import Collection from "./components/Collection";
+import Hero from "./components/home/Hero";
+import Recover from "./components/home/Recover";
+import MorningPromo from "./components/home/MorningPromo";
+import Features from "./components/home/Features";
+import Collection from "./components/products/Collection";
 
-export default function Home() {
+export default function Home({ searchParams }) {
+  const showManualCollection = searchParams?.category === 'manual';
+
   return (
     <>
       <Hero />
       <Features />
-      <Recover />
-      <MorningPromo />
-      <Collection />
+      {showManualCollection ? (
+        <Collection />
+      ) : (
+        <>
+          <Recover />
+          <MorningPromo />
+        </>
+      )}
     </>
   );
 }
