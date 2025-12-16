@@ -1,0 +1,367 @@
+/* Products Page Styles */
+
+/* Hero Section */
+.heroSection {
+    position: relative;
+    height: 85vh;
+    /* Increase height slightly per user comment */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Left align content */
+    text-align: left;
+    color: #fff;
+    margin-bottom: 0;
+    /* Remove black gap */
+    isolation: isolate;
+    padding-left: 10%;
+    /* Add spacing from left */
+}
+
+/* Background & Overlay */
+.heroBackground {
+    z-index: 0;
+    object-fit: cover;
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Stronger gradient for text checking */
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    /* Give more width */
+}
+
+/* Typography matching Screenshot */
+.smallTitle {
+    font-family: var(--font-heading);
+    /* Playfair Display */
+    font-size: 48px;
+    font-weight: 400;
+    color: #fff;
+    /* White for visibility */
+    margin-bottom: 10px;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.mainTitleWrapper {
+    margin: 0;
+    /* Reset margins */
+}
+
+.scriptText {
+    font-family: var(--font-script);
+    font-size: 160px;
+    /* Slightly smaller to prevent overlap */
+    line-height: 1.1;
+    /* More breathing room */
+    color: #d4a373;
+    /* Solid Gold */
+    display: block;
+    margin-left: -10px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    /* Push description down */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.heroDescription {
+    font-family: var(--font-body);
+    font-size: 18px;
+    color: #f5f5f5;
+    /* Light text */
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 550px;
+    font-weight: 400;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.heroBtn {
+    padding: 15px 40px;
+    background-color: #d4a373;
+    /* Gold */
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 163, 115, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.heroBtn:hover {
+    transform: translateY(-3px);
+    background-color: #b08d55;
+}
+
+/* Products Section */
+.productsSection {
+    padding: 50px 20px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.sectionTitle {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 36px;
+    color: #5c4033;
+    /* Dark brown */
+    margin-bottom: 40px;
+}
+
+/* Filter Bar */
+.filterBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+    background-color: #fff;
+    /* Ensure white bg */
+}
+
+.filterGroup {
+    display: flex;
+    gap: 15px;
+}
+
+.filterItem {
+    padding: 8px 15px;
+    background: #fff;
+    /* White bg */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+    /* Ensure text is visible */
+}
+
+.searchBox {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    width: 250px;
+    font-family: var(--font-body);
+    background-color: #fff;
+    /* White bg */
+    color: #333;
+}
+
+/* Product Grid */
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns desktop */
+    gap: 30px;
+}
+
+.productCard {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+    padding-bottom: 20px;
+}
+
+.productCard:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.productImageWrapper {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background: #f9f9f9;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.productImage {
+    object-fit: contain;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.productCategory {
+    color: #999;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.productName {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: #333;
+    margin: 5px 0;
+    font-weight: 700;
+}
+
+.productPrice {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: #d4a373;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.addToCartBtn {
+    padding: 8px 20px;
+    background: #d4a373;
+    /* Gold accent */
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.addToCartBtn:hover {
+    background: #b08d55;
+}
+
+/* About Section */
+.aboutSection {
+    padding: 80px 20px;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.aboutContent h2 {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    color: #5c4033;
+    margin-bottom: 20px;
+}
+
+.aboutContent p {
+    font-family: var(--font-body);
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.readMoreBtn {
+    padding: 10px 25px;
+    border: 1px solid #d4a373;
+    background: transparent;
+    color: #d4a373;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.aboutImageWrapper {
+    position: relative;
+    height: 400px;
+}
+
+.aboutImage {
+    object-fit: contain;
+}
+
+/* CTA Banner (Bottom) */
+.ctaBanner {
+    position: relative;
+    height: 400px;
+    background-color: #3e2723;
+    /* Dark coffee bean color fallback */
+    background-image: url('/images/brewviet_bean_texture_1765380452607.png');
+    /* Reuse texture if available */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    color: #fff;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.ctaContent {
+    max-width: 500px;
+    z-index: 2;
+}
+
+.ctaTitle {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.ctaTitle span {
+    color: #d4a373;
+}
+
+.ctaText {
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.ctaImageWrapper {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .productGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .aboutSection {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .filterBar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .ctaBanner {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .ctaImageWrapper {
+        display: none;
+        /* Hide coffee cup on mobile if needed for space */
+    }
+}

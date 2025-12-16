@@ -2,23 +2,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Recover.module.css';
 
-export default function Recover() {
+export default function Recover({
+    title = "Discover the best coffee",
+    description = "Bean Tour ac curae, stup import an isi qui is velit, half toto bose your perfu ment and help hold mor mor. Arigato mi a cala is you, soluta an yor of in a plaza space.",
+    buttonText = "Buy Now",
+    imageSrc = "/images/brewviet_spill_beans_1765380412141.png",
+    onButtonClick
+}) {
     return (
         <section className={styles.section}>
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <h2 className={styles.title}>Discover the best coffee</h2>
-                    <p className={styles.text}>
-                        Bean Tour ac curae, stup import an isi qui is velit, half
-                        toto bose your perfu ment and help hold mor mor. Arigato mi
-                        a cala is you, soluta an yor of in a plaza space.
-                    </p>
-                    <Link href="#shop" className={styles.button}>Buy Now</Link>
+                    <h2 className={styles.title}>{title}</h2>
+                    <p className={styles.text}>{description}</p>
+                    <Link href="#shop" className={styles.button}>{buttonText}</Link>
                 </div>
                 <div className={styles.imageWrapper}>
                     <Image
-                        src="/images/brewviet_spill_beans_1765380412141.png"
-                        alt="Coffee beans spilling"
+                        src={imageSrc}
+                        alt="Section Image"
                         width={600}
                         height={400}
                         className={styles.image}
@@ -28,3 +30,4 @@ export default function Recover() {
         </section>
     );
 }
+
