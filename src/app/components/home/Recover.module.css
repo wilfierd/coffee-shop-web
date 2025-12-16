@@ -1,6 +1,7 @@
 .section {
     padding: 100px 20px;
-    background-color: var(--color-bg);
+    background-color: #ffffff;
+    /* Explicit white to contrast with dark theme */
     overflow: hidden;
 }
 

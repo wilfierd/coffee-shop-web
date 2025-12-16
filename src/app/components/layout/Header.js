@@ -24,14 +24,14 @@ export default function Header() {
                 </button>
 
                 <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
-                    <Link href="/" className={`${styles.navLink} ${styles.navLinkActive}`} onClick={() => setIsMenuOpen(false)}>Home</Link>
-                    <Link href="#about" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>About</Link>
-                    <Link href="#shop" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Menu</Link>
-                    <Link href="#contact" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Contact</Link>
+                    <Link href="/" className={`${styles.navLink} ${styles.navLinkActive}`} onClick={() => setIsMenuOpen(false)}>Trang chủ</Link>
+                    <Link href="#products" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Sản phẩm</Link>
+                    <Link href="#cart" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Giỏ hàng</Link>
+                    <Link href="#checkout" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Thanh toán</Link>
                 </nav>
                 <div className={styles.actions}>
-                    <button className={styles.authBtn}>Log In</button>
-                    <button className={styles.cartBtn}>Cart (0)</button>
+                    <button className={styles.authBtn}>Đăng ký</button>
+                    <button className={styles.loginBtn}>Đăng nhập</button>
                 </div>
             </div>
         </header>

@@ -1,4 +1,4 @@
-import { Playfair_Display, Lato } from "next/font/google";
+import { Playfair_Display, Lato, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -16,6 +16,13 @@ const lato = Lato({
   display: "swap",
 });
 
+const greatVibes = Great_Vibes({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-script",
+  display: "swap",
+});
+
 export const metadata = {
   title: "Premium Coffee Shop",
   description: "Experience the best coffee in town.",
@@ -24,7 +31,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${lato.variable}`}>
+      <body className={`${playfair.variable} ${lato.variable} ${greatVibes.variable}`}>
         <Header />
         <main>{children}</main>
         <Footer />

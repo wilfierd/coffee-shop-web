@@ -3,12 +3,15 @@
     --color-secondary: #5D4037;
     --color-accent: #D4AF37;
     --color-highlight: #FFECB3;
-    --color-bg: #FFFFFF;
+    --color-bg: #000000;
+    /* Pure black */
     --color-white: #FFFFFF;
     --color-text: #333333;
     --color-text-light: #F5F5F5;
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Lato', sans-serif;
+    --font-heading: 'Playfair Display',
+        serif;
+    --font-body: 'Lato',
+        sans-serif;
 }
 
 html,
