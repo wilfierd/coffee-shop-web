@@ -1,8 +1,12 @@
 "use client";
 import React, { useState, useRef } from 'react';
+import { useRouter } from 'next/navigation';
+import { useCart } from '../../context/CartContext';
 import styles from './ProductModal.module.css';
 
 export default function ProductModal({ product, onClose }) {
+    const router = useRouter();
+    const { addToCart } = useCart();
     const [quantity, setQuantity] = useState(1);
     const [zoomStyle, setZoomStyle] = useState({ display: 'none' });
     const imageRef = useRef(null);
@@ -101,8 +105,28 @@ export default function ProductModal({ product, onClose }) {
 
                     {/* Actions */}
                     <div className={styles.actions}>
-                        <button className={styles.addToCartBtn}>Thêm vào giỏ</button>
-                        <button className={styles.buyNowBtn}>Đặt hàng ngay</button>
+                        <button
+                            className={styles.addToCartBtn}
+                            onClick={() => {
+                                const numericPrice = parseFloat(product.price.replace(/[^\d]/g, ''));
+                                addToCart({ ...product, price: numericPrice }, quantity);
+                                onClose(); // Close modal after adding
+                                // Could add a toast notification here later
+                            }}
+                        >
+                            Thêm vào giỏ
+                        </button>
+                        <button
+                            className={styles.buyNowBtn}
+                            onClick={() => {
+                                const numericPrice = parseFloat(product.price.replace(/[^\d]/g, ''));
+                                addToCart({ ...product, price: numericPrice }, quantity);
+                                onClose();
+                                router.push('/cart');
+                            }}
+                        >
+                            Đặt hàng ngay
+                        </button>
                     </div>
                 </div>
             </div>

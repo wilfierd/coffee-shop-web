@@ -73,32 +73,36 @@
 
  .navLink {
      font-family: var(--font-body);
-     font-weight: 300;
-     font-size: 15px;
-     color: #e0e0e0;
+     font-weight: 600;
+     /* Bolder text */
+     font-size: 16px;
+     /* Slightly larger */
+     color: #fff;
+     /* Pure white, no opacity */
      text-transform: none;
-     /* Keep natural case */
-     letter-spacing: 1px;
-     /* Increased spacing */
+     letter-spacing: 0.5px;
      transition: all 0.3s ease;
-     opacity: 0.8;
      position: relative;
      text-decoration: none;
+     opacity: 0.9;
  }
 
  .navLink:hover {
      opacity: 1;
-     color: #fff;
+     color: #f0c14b;
+     /* Yellow on hover */
  }
 
  .navLink.active,
  .navLinkActive {
      opacity: 1;
-     color: #fff;
-     font-weight: 400;
-     text-decoration: underline;
-     text-underline-offset: 8px;
-     text-decoration-thickness: 1px;
+     color: #f0c14b;
+     /* Yellow for active */
+     font-weight: 700;
+     text-decoration: none;
+     border-bottom: 2px solid #f0c14b;
+     /* Clear indicator */
+     padding-bottom: 5px;
  }
 
  .actions {

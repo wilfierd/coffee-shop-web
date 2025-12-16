@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -34,9 +36,9 @@ export default function Header() {
                 </button>
 
                 <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
-                    <Link href="/" className={`${styles.navLink} ${styles.navLinkActive}`} onClick={() => setIsMenuOpen(false)}>Trang chủ</Link>
+                    <Link href="/" className={`${styles.navLink} ${pathname === '/' ? styles.navLinkActive : ''}`} onClick={() => setIsMenuOpen(false)}>Trang chủ</Link>
                     <Link href="#products" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Sản phẩm</Link>
-                    <Link href="#cart" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Giỏ hàng</Link>
+                    <Link href="/cart" className={`${styles.navLink} ${pathname === '/cart' ? styles.navLinkActive : ''}`} onClick={() => setIsMenuOpen(false)}>Giỏ hàng</Link>
                     <Link href="#checkout" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Thanh toán</Link>
                 </nav>
                 <div className={styles.actions}>

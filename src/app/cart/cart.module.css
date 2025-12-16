@@ -1,0 +1,307 @@
+.cartPage {
+    background-color: #ffffff;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+.topBanner {
+    height: 120px;
+    background-color: #000000;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    color: #666;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.backButton:hover {
+    color: #000;
+}
+
+
+
+/* Progress Indicator (Shopee Style) */
+.progressContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    font-family: var(--font-body);
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100px;
+}
+
+.stepIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 8px;
+    transition: all 0.3s;
+}
+
+.stepLabel {
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.stepActive .stepIcon {
+    border-color: #f0c14b;
+    background-color: #f0c14b;
+    color: #000;
+}
+
+.stepActive .stepLabel {
+    color: #000;
+    font-weight: 700;
+}
+
+.connector {
+    flex: 1;
+    height: 2px;
+    background-color: #ccc;
+    margin-top: 20px;
+    /* Aligns with center of 40px circle */
+    margin-left: -20px;
+    margin-right: -20px;
+    position: relative;
+    z-index: 0;
+}
+
+.connectorActive {
+    background-color: #f0c14b;
+}
+
+.cartTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    table-layout: fixed;
+    /* Fix column widths */
+}
+
+.cartTable th {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #000;
+}
+
+/* Column Widths */
+.cartTable th:nth-child(1) {
+    width: 45%;
+}
+
+.cartTable th:nth-child(2) {
+    width: 20%;
+}
+
+.cartTable th:nth-child(3) {
+    width: 15%;
+}
+
+.cartTable th:nth-child(4) {
+    width: 20%;
+}
+
+.cartTable td {
+    padding: 20px 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+}
+
+.productInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.productImage {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.productDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.productName {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+}
+
+.productMeta {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: #666;
+}
+
+.price,
+.total {
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: #000;
+}
+
+.quantityControl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qtyBtn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.qtyBtn:hover {
+    background: #e0e0e0;
+}
+
+.qtyValue {
+    font-family: var(--font-body);
+    min-width: 20px;
+    text-align: center;
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.grandTotal {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    display: flex;
+    gap: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 20px;
+}
+
+.updateBtn {
+    padding: 12px 30px;
+    border-radius: 25px;
+    border: none;
+    background: #f0c14b;
+    color: #000;
+    font-family: var(--font-body);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.checkoutBtn {
+    padding: 12px 30px;
+    border-radius: 25px;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.updateBtn:hover,
+.checkoutBtn:hover {
+    transform: translateY(-2px);
+}
+
+.emptyCart {
+    text-align: center;
+    padding: 60px 0;
+    font-family: var(--font-body);
+    color: #666;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .cartTable thead {
+        display: none;
+        /* Hide headers on mobile */
+    }
+
+    .cartTable,
+    .cartTable tbody,
+    .cartTable tr,
+    .cartTable td {
+        display: block;
+        width: 100%;
+    }
+
+    .cartTable tr {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+    }
+
+    .cartTable td {
+        padding: 10px 0;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cartTable td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        font-family: var(--font-heading);
+    }
+}

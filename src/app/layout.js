@@ -31,13 +31,17 @@ export const metadata = {
   },
 };
 
+import { CartProvider } from "./context/CartContext";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${playfair.variable} ${lato.variable} ${greatVibes.variable}`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
