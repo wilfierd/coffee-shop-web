@@ -21,14 +21,7 @@ export default function Hero() {
                     className={`${styles.heroImage} ${styles.mobileImage}`}
                     priority
                 />
-                {/* Mobile Portrait Image */}
-                <Image
-                    src="/images/hero_mobile.png"
-                    alt="BrewViet Vietnamese Coffee"
-                    fill
-                    className={`${styles.heroImage} ${styles.mobileImage}`}
-                    priority
-                />
+
                 <div className={styles.overlay}></div>
             </div>
             <div className={styles.content}>

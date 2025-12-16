@@ -1,169 +1,202 @@
-.header {
-    height: 100px;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    /* No border bottom in the design */
-}
+ .header {
+     height: 100px;
+     background-color: transparent;
+     display: flex;
+     align-items: center;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     z-index: 1000;
+     /* No border bottom in the design */
+ }
 
-.container {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+ .logo {
+     z-index: 101;
+ }
 
-.logo a {
-    font-family: var(--font-script);
-    /* Great Vibes */
-    font-size: 48px;
-    /* Larger */
-    font-weight: 400;
-    color: var(--color-white);
-    letter-spacing: normal;
-    text-decoration: none;
-}
+ .logoLink {
+     display: flex;
+     align-items: center;
+     gap: 15px;
+     /* Space between logo and text */
+     text-decoration: none;
+ }
 
-.nav {
-    display: flex;
-    gap: 60px;
-    /* Wide spacing */
-}
+ .logoImage {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     border: 2px solid rgba(255, 255, 255, 0.2);
+     transition: transform 0.3s ease;
+ }
 
-.navLink {
-    font-family: var(--font-body);
-    font-weight: 300;
-    font-size: 15px;
-    color: #e0e0e0;
-    text-transform: none;
-    /* Keep natural case */
-    letter-spacing: 1px;
-    /* Increased spacing */
-    transition: all 0.3s ease;
-    opacity: 0.8;
-    position: relative;
-    text-decoration: none;
-}
+ .logoImage:hover {
+     transform: scale(1.05);
+ }
 
-.navLink:hover {
-    opacity: 1;
-    color: #fff;
-}
+ .logoText {
+     font-family: var(--font-script);
+     font-size: 32px;
+     font-weight: 700;
+     color: #fff;
+     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     white-space: nowrap;
+ }
 
-.navLink.active,
-.navLinkActive {
-    opacity: 1;
-    color: #fff;
-    font-weight: 400;
-    text-decoration: underline;
-    text-underline-offset: 8px;
-    text-decoration-thickness: 1px;
-}
+ .container {
+     width: 100%;
+     max-width: 1400px;
+     margin: 0 auto;
+     padding: 0 50px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
 
-.actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+ .logo a {
+     font-family: var(--font-script);
+     /* Great Vibes */
+     font-size: 48px;
+     /* Larger */
+     font-weight: 400;
+     color: var(--color-white);
+     letter-spacing: normal;
+     text-decoration: none;
+ }
 
-/* "Dang ky" - Ghost button style text */
-.authBtn {
-    background: transparent;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-family: var(--font-body);
-    color: var(--color-white);
-    font-size: 14px;
-    font-weight: 400;
-    transition: all 0.3s ease;
-}
+ .nav {
+     display: flex;
+     gap: 60px;
+     /* Wide spacing */
+ }
 
-.authBtn:hover {
-    opacity: 0.8;
-}
+ .navLink {
+     font-family: var(--font-body);
+     font-weight: 300;
+     font-size: 15px;
+     color: #e0e0e0;
+     text-transform: none;
+     /* Keep natural case */
+     letter-spacing: 1px;
+     /* Increased spacing */
+     transition: all 0.3s ease;
+     opacity: 0.8;
+     position: relative;
+     text-decoration: none;
+ }
 
-/* "Dang nhap" - Yellow Pill Button */
-.loginBtn {
-    background: #f0c14b;
-    /* Yellow/Orange */
-    border: none;
-    padding: 10px 30px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-family: var(--font-body);
-    color: var(--color-primary);
-    /* Dark text */
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
+ .navLink:hover {
+     opacity: 1;
+     color: #fff;
+ }
 
-.loginBtn:hover {
-    background: #FFD700;
-    transform: translateY(-2px);
-}
+ .navLink.active,
+ .navLinkActive {
+     opacity: 1;
+     color: #fff;
+     font-weight: 400;
+     text-decoration: underline;
+     text-underline-offset: 8px;
+     text-decoration-thickness: 1px;
+ }
 
-.mobileToggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-}
+ .actions {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+ }
 
-.bar,
-.barOpen {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    transition: all 0.3s ease;
-}
+ /* "Dang ky" - Ghost button style text */
+ .authBtn {
+     background: transparent;
+     border: none;
+     padding: 10px 15px;
+     cursor: pointer;
+     font-family: var(--font-body);
+     color: var(--color-white);
+     font-size: 14px;
+     font-weight: 400;
+     transition: all 0.3s ease;
+ }
 
-@media (max-width: 900px) {
-    .container {
-        padding: 0 20px;
-    }
+ .authBtn:hover {
+     opacity: 0.8;
+ }
 
-    .mobileToggle {
-        display: flex;
-    }
+ /* "Dang nhap" - Yellow Pill Button */
+ .loginBtn {
+     background: #f0c14b;
+     /* Yellow/Orange */
+     border: none;
+     padding: 10px 30px;
+     border-radius: 30px;
+     cursor: pointer;
+     font-family: var(--font-body);
+     color: var(--color-primary);
+     /* Dark text */
+     font-size: 14px;
+     font-weight: 600;
+     transition: all 0.3s ease;
+ }
 
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background-color: #2c1810;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: right 0.3s ease;
-        z-index: 1000;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-    }
+ .loginBtn:hover {
+     background: #FFD700;
+     transform: translateY(-2px);
+ }
 
-    .navOpen {
-        right: 0;
-    }
+ .mobileToggle {
+     display: none;
+     flex-direction: column;
+     gap: 5px;
+     background: none;
+     border: none;
+     cursor: pointer;
+     z-index: 1001;
+ }
 
-    .navLink {
-        font-size: 20px;
-        margin: 20px 0;
-    }
+ .bar,
+ .barOpen {
+     width: 25px;
+     height: 3px;
+     background-color: #fff;
+     transition: all 0.3s ease;
+ }
 
-    .actions {
-        display: none;
-    }
-}
+ @media (max-width: 900px) {
+     .container {
+         padding: 0 20px;
+     }
+
+     .mobileToggle {
+         display: flex;
+     }
+
+     .nav {
+         position: fixed;
+         top: 0;
+         right: -100%;
+         width: 70%;
+         height: 100vh;
+         background-color: #2c1810;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         transition: right 0.3s ease;
+         z-index: 1000;
+         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+     }
+
+     .navOpen {
+         right: 0;
+     }
+
+     .navLink {
+         font-size: 20px;
+         margin: 20px 0;
+     }
+
+     .actions {
+         display: none;
+     }
+ }

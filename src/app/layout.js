@@ -24,8 +24,11 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata = {
-  title: "Premium Coffee Shop",
+  title: "BrewViet - Authentic Vietnamese Coffee",
   description: "Experience the best coffee in town.",
+  icons: {
+    icon: '/images/logo.png',
+  },
 };
 
 export default function RootLayout({ children }) {

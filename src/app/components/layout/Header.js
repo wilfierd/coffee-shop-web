@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Header.module.css';
 
@@ -14,7 +15,16 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <Link href="/">BrewViet</Link>
+                    <Link href="/" className={styles.logoLink}>
+                        <Image
+                            src="/images/logo.png"
+                            alt="BrewViet"
+                            width={50}
+                            height={50}
+                            className={styles.logoImage}
+                        />
+                        <span className={styles.logoText}>BrewViet</span>
+                    </Link>
                 </div>
 
                 <button className={styles.mobileToggle} onClick={toggleMenu} aria-label="Toggle menu">
