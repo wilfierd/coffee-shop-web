@@ -32,18 +32,12 @@ export default function CartPage() {
 
                     <div className={styles.step}>
                         <div className={styles.stepIcon}>2</div>
-                        <span className={styles.stepLabel}>Đặt hàng</span>
-                    </div>
-                    <div className={styles.connector}></div>
-
-                    <div className={styles.step}>
-                        <div className={styles.stepIcon}>3</div>
                         <span className={styles.stepLabel}>Thanh toán</span>
                     </div>
                     <div className={styles.connector}></div>
 
                     <div className={styles.step}>
-                        <div className={styles.stepIcon}>4</div>
+                        <div className={styles.stepIcon}>3</div>
                         <span className={styles.stepLabel}>Hoàn tất</span>
                     </div>
                 </div>
@@ -115,7 +109,7 @@ export default function CartPage() {
                             </div>
                             <div className={styles.actions}>
                                 <button className={styles.updateBtn}>Cập nhật giỏ hàng</button>
-                                <button className={styles.checkoutBtn}>Thanh toán</button>
+                                <Link href="/checkout" className={styles.checkoutBtn}>Thanh toán</Link>
                             </div>
                         </div>
                     </>

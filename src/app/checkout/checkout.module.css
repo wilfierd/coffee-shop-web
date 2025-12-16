@@ -1,0 +1,643 @@
+/* Checkout Page Styles */
+.checkoutPage {
+    background-color: #fff;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    font-family: var(--font-body);
+}
+
+.topBanner {
+    height: 120px;
+    background-color: #000000;
+    width: 100%;
+}
+
+/* Progress Indicator (Shopee Style) */
+.progressContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    font-family: var(--font-body);
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100px;
+}
+
+.stepIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 8px;
+    transition: all 0.3s;
+}
+
+.stepLabel {
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.stepActive .stepIcon {
+    border-color: #f0c14b;
+    background-color: #f0c14b;
+    color: #000;
+}
+
+.stepActive .stepLabel {
+    color: #000;
+    font-weight: 700;
+}
+
+.connector {
+    flex: 1;
+    height: 2px;
+    background-color: #ccc;
+    margin-top: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    position: relative;
+    z-index: 0;
+}
+
+.connectorActive {
+    background-color: #f0c14b;
+}
+
+
+/* Payment Modal */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+    background-color: #fff;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+    position: relative;
+    font-family: var(--font-body);
+}
+
+.modalHeader {
+    background: linear-gradient(135deg, #ff3366 0%, #ff5c8d 100%);
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+}
+
+.modalTitle {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+}
+
+.modalBody {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+}
+
+.timerMsg {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.timer {
+    color: #ff3366;
+    font-weight: 700;
+}
+
+.qrContainer {
+    width: 350px;
+    height: 350px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.qrImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.bankInfo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bankName {
+    font-weight: 700;
+    color: #000;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.accountNumber {
+    font-family: monospace;
+    font-size: 16px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.transferNote {
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.closeBtn:hover {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.backButton {
+    display: inline-block;
+    color: #666;
+    margin-bottom: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.backButton:hover {
+    color: #000;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* Order Summary Table (Top) */
+.orderTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+
+.orderTable th {
+    text-align: left;
+    padding: 15px;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    color: #4a4a4a;
+    border-bottom: 1px solid #eee;
+}
+
+.orderTable td {
+    padding: 20px 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+/* Column Widths to match design */
+.orderTable th:nth-child(1) {
+    width: 45%;
+}
+
+.orderTable th:nth-child(2) {
+    width: 25%;
+}
+
+.orderTable th:nth-child(3) {
+    width: 15%;
+}
+
+.orderTable th:nth-child(4) {
+    width: 15%;
+}
+
+.productInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.productImage {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    background-color: #f9f9f9;
+}
+
+.productDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.productName {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.productMeta {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.4;
+}
+
+.price,
+.total {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.qtyControl {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    width: fit-content;
+    border-radius: 2px;
+}
+
+.qtyBtn {
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+}
+
+.qtyValue {
+    padding: 0 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Split Layout */
+.splitLayout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+/* Left Column: Form */
+.sectionTitle {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #4a4a4a;
+    border-bottom: 1px solid transparent;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-family: var(--font-body);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input:focus {
+    border-bottom-color: #000;
+}
+
+.input::placeholder {
+    color: #aaa;
+}
+
+.select {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-family: var(--font-body);
+    font-size: 14px;
+    background-color: transparent;
+    cursor: pointer;
+    color: #333;
+}
+
+.textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    min-height: 100px;
+    resize: vertical;
+    margin-top: 10px;
+}
+
+/* Success / Complete Step Styles */
+.successContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.successIcon {
+    width: 100px;
+    height: 100px;
+    background: #FF3366;
+    border-radius: 50%;
+    /* Fallback if no image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 50px;
+    color: #fff;
+    position: relative;
+}
+
+.successTitle {
+    font-family: var(--font-heading);
+    color: #FF3366;
+    /* Pink */
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.successMessage {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.orderDetailBox {
+    background-color: #FCE4EC;
+    /* Light Pink */
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.boxTitle {
+    color: #FF3366;
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.detailGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 40px;
+    font-size: 14px;
+    font-family: var(--font-body);
+}
+
+.detailRow {
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+.label {
+    color: #666;
+    font-weight: 500;
+}
+
+.value {
+    color: #333;
+    font-weight: 700;
+}
+
+.pinkText {
+    color: #FF3366;
+    font-weight: 700;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.btnSecondary {
+    padding: 10px 20px;
+    border: 1px solid #FF3366;
+    background: #fff;
+    color: #FF3366;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btnPrimary {
+    padding: 10px 20px;
+    background: #FF3366;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btnSecondary:hover {
+    background: #FFF0F5;
+}
+
+.btnPrimary:hover {
+    background: #E62E5C;
+}
+
+/* Make step clickable */
+.stepClickable {
+    cursor: pointer;
+}
+
+.stepClickable:hover .stepIcon {
+    border-color: #f0c14b;
+    color: #f0c14b;
+}
+
+/* Reset text align for detail box overrides if needed */
+.orderDetailBox p {
+    margin: 0;
+}
+
+/* Right Column: Calculations & Payment */
+.summaryBlock {
+    margin-bottom: 30px;
+}
+
+.summaryRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #555;
+}
+
+.totalRow {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000;
+}
+
+.radioGroup {
+    margin-bottom: 30px;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    gap: 10px;
+}
+
+.radioInput {
+    accent-color: #555;
+    width: 18px;
+    height: 18px;
+}
+
+.confirmBtn {
+    width: 100%;
+    padding: 15px;
+    background-color: #fff;
+    color: #ff3366;
+    /* Pink/Red accent from design */
+    border: 1px solid #ff3366;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+}
+
+.confirmBtn:hover {
+    background-color: #ff3366;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .splitLayout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .orderTable th,
+    .orderTable td {
+        padding: 10px 5px;
+        font-size: 13px;
+    }
+
+    .productImage {
+        width: 60px;
+        height: 60px;
+    }
+}

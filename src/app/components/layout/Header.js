@@ -39,7 +39,7 @@ export default function Header() {
                     <Link href="/" className={`${styles.navLink} ${pathname === '/' ? styles.navLinkActive : ''}`} onClick={() => setIsMenuOpen(false)}>Trang chủ</Link>
                     <Link href="#products" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Sản phẩm</Link>
                     <Link href="/cart" className={`${styles.navLink} ${pathname === '/cart' ? styles.navLinkActive : ''}`} onClick={() => setIsMenuOpen(false)}>Giỏ hàng</Link>
-                    <Link href="#checkout" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Thanh toán</Link>
+                    <Link href="/checkout" className={`${styles.navLink} ${pathname === '/checkout' ? styles.navLinkActive : ''}`} onClick={() => setIsMenuOpen(false)}>Thanh toán</Link>
                 </nav>
                 <div className={styles.actions}>
                     <button className={styles.authBtn}>Đăng ký</button>
