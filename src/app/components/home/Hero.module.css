@@ -22,6 +22,24 @@
     z-index: 0;
 }
 
+/* Default: Desktop visible, Mobile hidden */
+.desktopImage {
+    display: block;
+}
+
+.mobileImage {
+    display: none;
+}
+
+/* Image visibility control */
+.desktopImage {
+    display: block;
+}
+
+.mobileImage {
+    display: none;
+}
+
 .heroImage {
     object-fit: cover;
     transform: scale(1.05);
@@ -146,9 +164,17 @@
     }
 
     .heroImage {
-        object-position: 80% center;
-        /* Shift focus to right (filter) on mobile */
-        transform: scale(1.1);
-        /* Zoom slightly more on mobile for better fill */
+        object-position: center;
+        /* Portrait image is strictly centered */
+        transform: scale(1.0);
+        /* No zoom needed for portrait fit */
+    }
+
+    .desktopImage {
+        display: none;
+    }
+
+    .mobileImage {
+        display: block;
     }
 }

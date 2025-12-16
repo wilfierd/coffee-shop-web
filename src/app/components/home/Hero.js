@@ -5,11 +5,28 @@ export default function Hero() {
     return (
         <section className={styles.hero}>
             <div className={styles.bgWrapper}>
+                {/* Desktop and Tablet Image (Landscape) */}
                 <Image
                     src="/images/brewviet_hero_bg_1765380384101.png"
                     alt="BrewViet Vietnamese Coffee"
                     fill
-                    className={styles.heroImage}
+                    className={`${styles.heroImage} ${styles.desktopImage}`}
+                    priority
+                />
+                {/* Mobile Portrait Image (Vertical 9:16) */}
+                <Image
+                    src="/images/hero_mobile_v2.png"
+                    alt="BrewViet Vietnamese Coffee"
+                    fill
+                    className={`${styles.heroImage} ${styles.mobileImage}`}
+                    priority
+                />
+                {/* Mobile Portrait Image */}
+                <Image
+                    src="/images/hero_mobile.png"
+                    alt="BrewViet Vietnamese Coffee"
+                    fill
+                    className={`${styles.heroImage} ${styles.mobileImage}`}
                     priority
                 />
                 <div className={styles.overlay}></div>
