@@ -17,15 +17,17 @@ export default function Recover({
                     <p className={styles.text}>{description}</p>
                     <Link href="#shop" className={styles.button}>{buttonText}</Link>
                 </div>
-                <div className={styles.imageWrapper}>
-                    <Image
-                        src={imageSrc}
-                        alt="Section Image"
-                        width={600}
-                        height={400}
-                        className={styles.image}
-                    />
-                </div>
+                {imageSrc && (
+                    <div className={styles.imageWrapper}>
+                        <Image
+                            src={imageSrc}
+                            alt="Section Image"
+                            width={600}
+                            height={400}
+                            className={styles.image}
+                        />
+                    </div>
+                )}
             </div>
         </section>
     );

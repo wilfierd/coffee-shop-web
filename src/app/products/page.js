@@ -7,16 +7,17 @@ import Recover from '../components/home/Recover';
 
 export default function ProductsPage() {
     const [filter, setFilter] = useState('All');
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
 
     // Mock Data based on the design
     // Reusing existing images from public/images
     const products = [
         {
             id: 1,
-            name: 'Cà phê hạt Robusta',
-            price: '135,000 ₫',
+            name: '[Rang đậm] Cà phê Arabica núi Min Trà Lọt',
+            price: '135,000 ₫ - 320,000 ₫',
             image: '/images/coffee_product_bag_1_1765379430870.png',
-            category: 'Robusta'
+            category: 'Arabica'
         },
         {
             id: 2,
@@ -105,37 +106,76 @@ export default function ProductsPage() {
                 <h2 className={styles.sectionTitle}>Sản phẩm của chúng tôi</h2>
 
                 {/* Filter Bar */}
-                <div className={styles.filterBar}>
-                    <div className={styles.filterGroup}>
-                        <div className={styles.filterItem}>Tất cả</div>
-                        <div className={styles.filterItem}>Espresso</div>
-                        <div className={styles.filterItem}>Phin Giấy</div>
-                        <div className={styles.filterItem}>Hạt Rang</div>
+                {/* Top Controls: Search & Filter */}
+                <div className={styles.topControls}>
+                    <div className={styles.searchWrapper}>
+                        <svg className={styles.searchIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" placeholder="Tìm kiếm" className={styles.searchInput} />
                     </div>
-                    <div>
-                        <input type="text" placeholder="Tìm kiếm..." className={styles.searchBox} />
+
+                    <div className={styles.filterWrapper}>
+                        <button className={styles.filterBtn} onClick={() => setIsFilterOpen(!isFilterOpen)}>
+                            <svg className={styles.filterIcon} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                            </svg>
+                            <span>Lọc</span>
+                            <svg className={styles.chevronIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+
+                        {isFilterOpen && (
+                            <div className={styles.filterDropdown}>
+                                <div className={styles.filterOption}>Tất cả</div>
+                                <div className={styles.filterOption}>Thủ công</div>
+                                <div className={styles.filterOption}>Hiện đại</div>
+                                <div className={styles.filterOption}>Ngâm</div>
+                                <div className={styles.filterOption}>Di động</div>
+                                <div className={styles.filterOption}>Nâng cao</div>
+                            </div>
+                        )}
                     </div>
+                </div>
+
+                {/* Category Tabs */}
+                <div className={styles.categoryTabs}>
+                    <div className={`${styles.categoryTab} ${styles.activeTab}`}>
+                        Cà phê
+                    </div>
+                    <div className={styles.categoryTab}>Espresso</div>
+                    <div className={styles.categoryTab}>Cối xay tay</div>
+                    <div className={styles.categoryTab}>Máy pha</div>
+                    <div className={styles.categoryTab}>Aeropress</div>
+                    <div className={styles.categoryTab}>Bình đựng</div>
+                    <div className={styles.categoryTab}>Minipresso</div>
+                    <div className={styles.categoryTab}>Pour Over</div>
+                    <div className={styles.categoryTab}>French Press</div>
                 </div>
 
                 {/* Grid */}
                 <div className={styles.productGrid}>
                     {products.map(product => (
                         <div key={product.id} className={styles.productCard}>
-                            <div className={styles.productImageWrapper}>
-                                <Image
-                                    src={product.image}
-                                    alt={product.name}
-                                    width={200}
-                                    height={200}
-                                    className={styles.productImage}
-                                />
-                            </div>
-                            <div className={styles.productInfo}>
-                                <p className={styles.productCategory}>{product.category}</p>
-                                <h3 className={styles.productName}>{product.name}</h3>
-                                <span className={styles.productPrice}>{product.price}</span>
-                                <button className={styles.addToCartBtn}>Mua ngay</button>
-                            </div>
+                            <Link href={`/products/${product.id}`} className={styles.productLinkWrapper} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <div className={styles.productImageWrapper}>
+                                    <Image
+                                        src={product.image}
+                                        alt={product.name}
+                                        width={200}
+                                        height={200}
+                                        className={styles.productImage}
+                                    />
+                                </div>
+                                <div className={styles.productInfo}>
+                                    <p className={styles.productCategory}>{product.category}</p>
+                                    <h3 className={styles.productName}>{product.name}</h3>
+                                    <span className={styles.productPrice}>{product.price}</span>
+                                    <button className={styles.addToCartBtn}>Mua ngay</button>
+                                </div>
+                            </Link>
                         </div>
                     ))}
                 </div>
@@ -155,7 +195,7 @@ export default function ProductsPage() {
                     </>
                 }
                 buttonText="Xem chi tiết"
-                imageSrc="/images/coffee-beans 1.png"
+                imageSrc={null}
             />
 
             {/* CTA Banner */}
