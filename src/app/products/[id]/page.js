@@ -4,9 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../products.module.css'; // Import from parent directory
 
+// ... imports
+import { useCart } from '../../context/CartContext';
+
 export default function ProductDetailPage({ params }) {
     // Unwrap params using React.use()
     const { id } = React.use(params);
+    const { addToCart } = useCart();
 
     // State for Filter (Reused UI)
     const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -21,13 +25,14 @@ export default function ProductDetailPage({ params }) {
     const product = {
         id: id,
         name: '[Rang đậm] Cà phê Arabica núi Min Trà Lọt, phù hợp với - Espresso, Phin, Moka pot, Staresso',
-        price: '135,000 ₫ - 520,000 ₫',
+        price: '135,000 ₫ - 520,000 ₫', // Display string
+        basePrice: 135000, // Numeric base price for logic
         rating: 5,
         ratingCount: 16, // derived from mocks
         images: [
             '/images/coffee_product_bag_1_1765379430870.png', // Main image
-            '/images/brewviet_product_beans_1765380508530.png', // Mock thumb 1
-            '/images/coffee_product_bag_3_1765379485481.png' // Mock thumb 2
+            '/images/coffee_product_bag_2_1765379460201.png',
+            '/images/coffee_product_bag_3_1765379485481.png'
         ],
         description: `
             Giống Arabica Catimor được hái chín 100% từ nông trại Cầu Đất Farm ở độ cao 1600-1650m...
@@ -40,6 +45,27 @@ export default function ProductDetailPage({ params }) {
             "Vị": "Caramel, socola đen, thể chất dày, ít chua, hậu vị tốt",
             "Phù hợp với": "Phin, Moka pot, Staresso, Espresso"
         }
+    };
+
+    // State for Success Modal
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
+
+    const handleAddToCart = () => {
+        // Create a unique cart ID based on product ID + options
+        // This ensures variants (e.g. 250g vs 500g) are separate items
+        const cartItemId = `${product.id}-${selectedWeight.replace(/\s+/g, '')}-${selectedGrind.replace(/\s+/g, '')}`;
+
+        const itemToAdd = {
+            id: cartItemId, // Use composite ID for Cart
+            productId: product.id, // Keep original ID reference
+            name: product.name,
+            price: product.basePrice,
+            image: product.images[0],
+            weight: selectedWeight,
+            grind: selectedGrind
+        };
+        addToCart(itemToAdd, quantity);
+        setShowSuccessModal(true); // Show custom modal instead of alert
     };
 
     // Related Products Mock
@@ -250,7 +276,7 @@ export default function ProductDetailPage({ params }) {
                             <span className={styles.qtyValue}>{quantity}</span>
                             <button className={styles.qtyBtn} onClick={() => setQuantity(quantity + 1)}>+</button>
                         </div>
-                        <button className={styles.addToCartBigBtn}>Mua hàng</button>
+                        <button className={styles.addToCartBigBtn} onClick={handleAddToCart}>Mua hàng</button>
                     </div>
 
                     {/* Shipping Info Box */}
@@ -416,6 +442,31 @@ export default function ProductDetailPage({ params }) {
             </div>
 
 
+            {/* ============================================================
+               SUCCESS MODAL
+               ============================================================ */}
+            {showSuccessModal && (
+                <div className={styles.modalOverlay}>
+                    <div className={styles.modalContent}>
+                        <div className={styles.modalIcon}>
+                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#4caf50" strokeWidth="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Thêm vào giỏ hàng thành công!</h3>
+                        <p>{product.name}</p>
+                        <div className={styles.modalActions}>
+                            <button className={styles.btnSecondary} onClick={() => setShowSuccessModal(false)}>
+                                Tiếp tục mua sắm
+                            </button>
+                            <Link href="/cart" className={styles.btnPrimary}>
+                                Xem giỏ hàng
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

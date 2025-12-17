@@ -6,10 +6,24 @@ import { useCart } from '../context/CartContext';
 import styles from './cart.module.css';
 
 export default function CartPage() {
-    const { cartItems, updateQuantity, getCartTotal } = useCart();
+    const { cartItems, updateQuantity, removeFromCart, getCartTotal } = useCart();
+    const [showConfirm, setShowConfirm] = React.useState(null); // ID of item to delete
 
     const formatPrice = (price) => {
         return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+    };
+
+    const handleQuantityChange = (id, newQty) => {
+        if (newQty < 1) {
+            setShowConfirm(id);
+        } else {
+            updateQuantity(id, newQty);
+        }
+    };
+
+    const confirmDelete = () => {
+        removeFromCart(showConfirm);
+        setShowConfirm(null);
     };
 
     return (
@@ -57,6 +71,7 @@ export default function CartPage() {
                                     <th>Giá bán</th>
                                     <th>Số lượng</th>
                                     <th>Tổng tiền</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -64,7 +79,6 @@ export default function CartPage() {
                                     <tr key={item.id}>
                                         <td data-label="Sản phẩm">
                                             <div className={styles.productInfo}>
-                                                {/* Image removed as per user request */}
                                                 <div className={styles.productDetails}>
                                                     <span className={styles.productName}>{item.name}</span>
                                                     <span className={styles.productMeta}>
@@ -81,14 +95,14 @@ export default function CartPage() {
                                             <div className={styles.quantityControl}>
                                                 <button
                                                     className={styles.qtyBtn}
-                                                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                                                    onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
                                                 >
                                                     -
                                                 </button>
                                                 <span className={styles.qtyValue}>{item.quantity}</span>
                                                 <button
                                                     className={styles.qtyBtn}
-                                                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                                                    onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
                                                 >
                                                     +
                                                 </button>
@@ -96,6 +110,17 @@ export default function CartPage() {
                                         </td>
                                         <td data-label="Tổng tiền">
                                             <span className={styles.total}>{formatPrice(item.price * item.quantity)}</span>
+                                        </td>
+                                        <td title="Xóa">
+                                            <button
+                                                className={styles.deleteBtn}
+                                                onClick={() => setShowConfirm(item.id)}
+                                            >
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                </svg>
+                                            </button>
                                         </td>
                                     </tr>
                                 ))}
@@ -115,6 +140,20 @@ export default function CartPage() {
                     </>
                 )}
             </div>
+
+            {/* Confirmation Modal */}
+            {showConfirm && (
+                <div className={styles.modalOverlay}>
+                    <div className={styles.modal}>
+                        <h3>Xác nhận xóa</h3>
+                        <p>Bạn có chắc muốn xóa sản phẩm này khỏi giỏ hàng?</p>
+                        <div className={styles.modalActions}>
+                            <button className={styles.cancelBtn} onClick={() => setShowConfirm(null)}>Hủy</button>
+                            <button className={styles.confirmBtn} onClick={confirmDelete}>Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
