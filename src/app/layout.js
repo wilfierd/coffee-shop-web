@@ -2,6 +2,7 @@ import { Playfair_Display, Lato, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import FloatingControls from "./components/layout/FloatingControls";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
           <Header />
           <main>{children}</main>
           <Footer />
+          <FloatingControls />
         </CartProvider>
       </body>
     </html>
