@@ -198,27 +198,7 @@ export default function ProductsPage() {
                 imageSrc={null}
             />
 
-            {/* CTA Banner */}
-            <section className={styles.ctaBanner}>
-                <div className={styles.ctaContent}>
-                    <h2 className={styles.ctaTitle}>
-                        Tạo cơ hội cho buổi sáng <br />
-                        tuyệt vời cùng với <span>BrewViet</span>
-                    </h2>
-                    <p className={styles.ctaText}>
-                        Mang lại sự tỉnh táo ngày dài, cho mọi kết nối được thăng hoa.
-                    </p>
-                    <button className={styles.heroBtn}>Mua ngay</button>
-                </div>
-                <div className={styles.ctaImageWrapper}>
-                    <Image
-                        src="/images/coffee-cup 1.png"
-                        alt="Coffee Cup"
-                        fill
-                        style={{ objectFit: 'contain' }}
-                    />
-                </div>
-            </section>
+
         </div>
     );
 }
