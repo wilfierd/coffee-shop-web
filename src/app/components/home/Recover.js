@@ -3,9 +3,9 @@ import Link from 'next/link';
 import styles from './Recover.module.css';
 
 export default function Recover({
-    title = "Discover the best coffee",
-    description = "Bean Tour ac curae, stup import an isi qui is velit, half toto bose your perfu ment and help hold mor mor. Arigato mi a cala is you, soluta an yor of in a plaza space.",
-    buttonText = "Buy Now",
+    title = "Khám phá hương vị tuyệt hảo",
+    description = "Trải nghiệm cà phê đích thực với những hạt cà phê được tuyển chọn kỹ lưỡng. Chúng tôi mang đến cho bạn không gian thưởng thức tuyệt vời và những sản phẩm chất lượng nhất.",
+    buttonText = "Mua ngay",
     imageSrc = "/images/brewviet_spill_beans_1765380412141.png",
     onButtonClick
 }) {

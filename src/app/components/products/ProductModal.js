@@ -2,12 +2,14 @@
 import React, { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCart } from '../../context/CartContext';
+import SuccessModal from '../ui/SuccessModal';
 import styles from './ProductModal.module.css';
 
 export default function ProductModal({ product, onClose }) {
     const router = useRouter();
     const { addToCart } = useCart();
     const [quantity, setQuantity] = useState(1);
+    const [showSuccess, setShowSuccess] = useState(false);
     const [zoomStyle, setZoomStyle] = useState({ display: 'none' });
     const imageRef = useRef(null);
 
@@ -110,8 +112,12 @@ export default function ProductModal({ product, onClose }) {
                             onClick={() => {
                                 const numericPrice = parseFloat(product.price.replace(/[^\d]/g, ''));
                                 addToCart({ ...product, price: numericPrice }, quantity);
-                                onClose(); // Close modal after adding
-                                // Could add a toast notification here later
+                                setShowSuccess(true);
+                                // onClose(); // Do not close main modal yet, or maybe close it?
+                                // User flow: Add to cart -> Success Modal -> (Continue Shopping -> Close All) OR (View Cart)
+                                // If we close main modal immediately, the success modal (if nested) will disappear.
+                                // SuccessModal should be rendered outside? Or inside?
+                                // If inside, we need to keep ProductModal open.
                             }}
                         >
                             Thêm vào giỏ
@@ -130,6 +136,15 @@ export default function ProductModal({ product, onClose }) {
                     </div>
                 </div>
             </div>
+            {showSuccess && (
+                <SuccessModal
+                    product={product}
+                    onClose={() => {
+                        setShowSuccess(false);
+                        onClose(); // Close the product modal too when closing success modal (Continuing shopping)
+                    }}
+                />
+            )}
         </div>
     );
 }

@@ -305,9 +305,7 @@ export default function CheckoutPage() {
                                 />
                             </div>
 
-                            <div className={styles.bankInfo}>
-                                <span className={styles.accountNumber}>931080499999</span>
-                            </div>
+
 
                             <p className={styles.transferNote}>
                                 * Nội dung chuyển khoản: Tên + SĐT

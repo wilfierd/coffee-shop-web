@@ -11,32 +11,32 @@ export default function Features() {
 
     const features = [
         {
-            title: "Thủ công",
-            description: "Mang lại hương vị tuyệt vời",
+            title: "Truyền Thống",
+            description: "Đậm đà bản sắc cà phê Phin Việt",
             id: 'traditional',
             imageSrc: "/images/coffee-beans 1.png"
         },
         {
-            title: "Hiện đại",
-            description: "Giá cà phê của chúng tôi rất phải chăng.",
+            title: "Pour Over (Drip)",
+            description: "Nghệ thuật chiết xuất tinh tế và cân bằng",
             id: 'pour_over',
             imageSrc: "/images/pour.png"
         },
         {
-            title: "Ngâm",
-            description: "Cà phê mà bạn chưa từng nếm thử",
+            title: "Ngâm Ủ",
+            description: "Hương vị đậm đà, trọn vẹn từng giọt",
             id: 'immersion',
             imageSrc: "/images/coffee-cup 1.png"
         },
         {
-            title: "Di động",
-            description: "Hương vị bùng nổ và bao trùm cả căn phòng",
+            title: "Di Động",
+            description: "Thưởng thức cà phê đỉnh cao mọi lúc mọi nơi",
             id: 'portable',
             imageSrc: "/images/best-price 1.png"
         },
         {
-            title: "Nâng cao",
-            description: "Chúng tôi cung cấp chất lượng cao nhất",
+            title: "Espresso",
+            description: "Trải nghiệm đẳng cấp Barista ngay tại nhà",
             id: 'espresso',
             imageSrc: "/images/ant-design_shopping-outlined.png"
         }

@@ -32,9 +32,15 @@ const FloatingControls = () => {
             <div style={styles.contactGroup}>
                 <a href="https://zalo.me/0987654321" target="_blank" rel="noopener noreferrer" style={{ ...styles.contactBtn, backgroundColor: '#0068FF' }} title="Chat Zalo">
                     {/* Zalo Icon (SVG) */}
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                    </svg>
+                    {/* Zalo Icon (Image) */}
+                    <div style={{ width: '24px', height: '24px', position: 'relative' }}>
+                        <Image
+                            src="/images/icon-zalo.png"
+                            alt="Zalo"
+                            fill
+                            style={{ objectFit: 'contain' }}
+                        />
+                    </div>
                 </a>
                 <a href="tel:0987654321" style={{ ...styles.contactBtn, backgroundColor: '#4caf50' }} title="Call Hotline">
                     {/* Phone Icon (SVG) */}
