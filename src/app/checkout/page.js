@@ -192,7 +192,7 @@ export default function CheckoutPage() {
 
                                 <div className={styles.summaryBlock}>
                                     <div className={styles.summaryRow}>
-                                        <span>Shipping</span>
+                                        <span>Vận chuyển</span>
                                         <div>
                                             <div className={styles.radioLabel}>
                                                 <input type="radio" name="shipping" defaultChecked className={styles.radioInput} />

@@ -12,27 +12,33 @@ export default function Features() {
     const features = [
         {
             title: "Thủ công",
-            description: "Beans that provides great taste",
-            id: 'manual',
+            description: "Mang lại hương vị tuyệt vời",
+            id: 'traditional',
             imageSrc: "/images/coffee-beans 1.png"
         },
         {
-            title: "Di Động",
-            description: "We provide the highest quality",
-            id: 'mobile',
-            imageSrc: "/images/badge 1.png"
+            title: "Hiện đại",
+            description: "Giá cà phê của chúng tôi rất phải chăng.",
+            id: 'pour_over',
+            imageSrc: "/images/pour.png"
         },
         {
-            title: "Expresso",
-            description: "Coffee like you have never tasted",
-            id: 'espresso',
+            title: "Ngâm",
+            description: "Cà phê mà bạn chưa từng nếm thử",
+            id: 'immersion',
             imageSrc: "/images/coffee-cup 1.png"
         },
         {
-            title: "Đồ điện tử",
-            description: "Our Coffee prices are easy to afford",
-            id: 'electronic',
+            title: "Di động",
+            description: "Hương vị bùng nổ và bao trùm cả căn phòng",
+            id: 'portable',
             imageSrc: "/images/best-price 1.png"
+        },
+        {
+            title: "Nâng cao",
+            description: "Chúng tôi cung cấp chất lượng cao nhất",
+            id: 'espresso',
+            imageSrc: "/images/ant-design_shopping-outlined.png"
         }
     ];
 
@@ -57,12 +63,13 @@ export default function Features() {
                         </div>
                     );
 
-                    return feature.id === 'manual' ? (
-                        <Link href={isActive ? "/" : "/?category=manual"} key={index} scroll={false}>
-                            {CardContent}
-                        </Link>
-                    ) : (
-                        <Link href="/" key={index} scroll={false}>
+                    return (
+                        <Link
+                            href={isActive ? "/" : `/?category=${feature.id}`}
+                            key={feature.id}
+                            scroll={false}
+                            className={styles.link} // Added class for easier styling if needed
+                        >
                             {CardContent}
                         </Link>
                     );

@@ -7,7 +7,8 @@ import Collection from "./components/products/Collection";
 
 export default async function Home(props) {
   const searchParams = await props.searchParams;
-  const showManualCollection = searchParams?.category === 'manual';
+  const selectedCategory = searchParams?.category;
+  const showCollection = !!selectedCategory;
 
   return (
     <>
@@ -15,8 +16,8 @@ export default async function Home(props) {
       <Suspense fallback={<div>Loading...</div>}>
         <Features />
       </Suspense>
-      {showManualCollection ? (
-        <Collection />
+      {showCollection ? (
+        <Collection initialCategory={selectedCategory} />
       ) : (
         <>
           <Recover />

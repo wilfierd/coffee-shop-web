@@ -73,15 +73,15 @@ export default function ProductModal({ product, onClose }) {
                     <table className={styles.miniTable}>
                         <tbody>
                             <tr>
-                                <td><strong>SKU</strong></td>
+                                <td><strong>Mã sản phẩm</strong></td>
                                 <td>PR-HG420CNCS</td>
                             </tr>
                             <tr>
-                                <td><strong>Phân Loại / Type</strong></td>
+                                <td><strong>Phân Loại</strong></td>
                                 <td>{product.type}</td>
                             </tr>
                             <tr>
-                                <td><strong>Màu / Color</strong></td>
+                                <td><strong>Màu Sắc</strong></td>
                                 <td>{product.color}</td>
                             </tr>
                         </tbody>

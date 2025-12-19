@@ -264,7 +264,7 @@ export default function ProductDetailPage({ params }) {
                                         {opt}
                                     </button>
                                 ))}
-                                <button className={styles.clearOption} onClick={() => { setSelectedWeight(''); setSelectedGrind(''); }}>Clear</button>
+                                <button className={styles.clearOption} onClick={() => { setSelectedWeight(''); setSelectedGrind(''); }}>Xóa</button>
                             </div>
                         </div>
                     </div>
@@ -324,7 +324,7 @@ export default function ProductDetailPage({ params }) {
                     <p>Cà phê Arabica được nhập từ núi Min – Đà Lạt, Lâm Đồng, một trong những nơi trồng cà phê nổi tiếng nhất của Việt Nam, có nhiều điều kiện thích hợp về nhiệt độ, độ cao,... để cây cà phê được phát triển tốt. Chính vì vậy, hạt cà phê rang mộc sau khi pha rất thơm, body khá chắc, có hương của Caramel. Phiên bản rang đậm (Dark) với vị cà phê thiên về đắng và béo, vị chua ít hơn so với cỡ rang vừa (Medium).</p>
                 </div>
 
-                <h3 className={styles.sectionHeading}>Reviews</h3>
+                <h3 className={styles.sectionHeading}>Đánh giá</h3>
                 <div className={styles.reviewsSection}>
                     {/* Review 1 */}
                     <div className={styles.reviewItem}>
