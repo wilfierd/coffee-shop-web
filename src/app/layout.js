@@ -25,8 +25,8 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata = {
-  title: "BrewViet - Authentic Vietnamese Coffee",
-  description: "Experience the best coffee in town.",
+  title: "BrewViet - Dụng Cụ Pha Chế & Cà Phê Thủ Công",
+  description: "Chuyên cung cấp bộ kit pha chế, dụng cụ cà phê thủ công và kiến thức Home Barista.",
   icons: {
     icon: '/images/logo.png',
   },

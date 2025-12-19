@@ -90,12 +90,12 @@ export default function ProductsPage() {
                     priority
                 />
                 <div className={styles.heroContent}>
-                    <h2 className={styles.smallTitle}>Khám phá cà phê Việt chính gốc</h2>
+                    <h2 className={styles.smallTitle}>Dụng Cụ Pha Chế Chuyên Nghiệp</h2>
                     <div className={styles.mainTitleWrapper}>
-                        <span className={styles.scriptText}>Coffee</span>
+                        <span className={styles.scriptText}>Barista</span>
                     </div>
                     <p className={styles.heroDescription}>
-                        Để mỗi tách cà phê trên tay không chỉ là thức uống, mà là bản tuyên ngôn về phong cách sống của riêng mình.
+                        Khám phá bộ sưu tập dụng cụ pha chế thủ công đỉnh cao, giúp bạn tự tay tạo nên những tách cà phê hoàn hảo tại nhà.
                     </p>
                     <button className={styles.heroBtn}>Đặt hàng ngay</button>
                 </div>
@@ -183,19 +183,18 @@ export default function ProductsPage() {
 
             {/* About Section (Reusing Recover Component) */}
             <Recover
-                title="Giới thiệu"
+                title="Không Chỉ Là Dụng Cụ"
                 description={
                     <>
-                        Cà phê rang xay được chọn lọc từ những hạt cà phê hảo hạng nhất
-                        từ vùng cao nguyên Việt Nam. Với quy trình chế biến nghiêm ngặt,
-                        giữ trọn hương vị đậm đà và phong vị truyền thống.
+                        Tại BrewViet, chúng tôi cung cấp giải pháp trọn gói cho trải nghiệm cà phê tại nhà.
+                        Từ những bộ Kit pha chế chuyên nghiệp, kiến thức chuyên sâu, đến cộng đồng chia sẻ đam mê.
                         <br /><br />
-                        Chúng tôi tự hào mang đến những ly cà phê sạch và chất lượng
-                        cho người sành điệu, đam mê khám phá hương vị cà phê Việt.
+                        Chúng tôi đồng hành cùng bạn trên hành trình trở thành một Home Barista thực thụ,
+                        biến mỗi lần pha chế thành một trải nghiệm phong cách sống.
                     </>
                 }
-                buttonText="Xem chi tiết"
-                imageSrc={null}
+                buttonText="Tham gia cộng đồng"
+                imageSrc="/images/Rectangle 7.png"
             />
 
 
